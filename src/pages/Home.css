@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap');
+
+.home {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* FIXED VIDEO */
+#home-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Overlay ABOVE video */
+.home-overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  background: radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.45),
+    rgba(0, 0, 0, 0.9)
+  );
+  display: flex;
+  align-items: center;
+}
+
+/* --- UPDATED FONTS FOR COLLEGE HEADER --- */
+.college-header {
+  display: flex;
+  justify-content: center; /* Ensures horizontal centering */
+  align-items: center;     /* Ensures vertical alignment */
+  gap: clamp(5px, 2vw, 15px);
+  flex-wrap: nowrap;       /* Forces single line */
+  width: 100%;
+  margin-left: auto;       /* Explicitly center in container */
+  margin-right: auto;      /* Explicitly center in container */
+}
+
+.college-name {
+  font-family: 'Montserrat', sans-serif;
+  /* Scales font: Min 0.85rem, Preferred 3vw, Max 1.9rem */
+  font-size: clamp(0.85rem, 3.5vw, 1.9rem); 
+  font-weight: 300;
+  letter-spacing: clamp(1px, 0.5vw, 4px);
+  color: #ffffff;
+  white-space: nowrap;
+  margin: 0 !important;    /* Remove any bootstrap default margins */
+}
+
+.event-logo {
+  /* Scales logo: Min 35px, Preferred 6vw, Max 100px */
+  height: clamp(35px, 7vw, 100px);
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* --- UPDATED FONTS FOR DEPARTMENT --- */
+.department-name {
+  font-family: 'Montserrat', sans-serif; /* Updated */
+  color: #d4af37;
+  font-weight: 600;
+  letter-spacing: 3px; /* Updated */
+}
+
+.organizes-text {
+  font-family: 'Montserrat', sans-serif; /* Updated */
+  letter-spacing: 6px; /* Updated */
+  opacity: 0.85;
+}
+
+/* --- UPDATED FONTS FOR EVENT TITLE --- */
+.event-title {
+  font-family: 'Orbitron', sans-serif; /* Updated */
+  font-size: 3.6rem;
+  font-weight: 900; /* Heavier for luxury impact */
+  letter-spacing: 8px; /* Updated */
+  color: #d4af37;
+  text-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
+}
+
+.event-subtitle {
+  font-family: 'Montserrat', sans-serif; /* Updated */
+  letter-spacing: 3px; /* Updated */
+  font-weight: 300;
+}
+
+/* --- UPDATED FONTS FOR BUTTON --- */
+.register-btn {
+  font-family: 'Orbitron', sans-serif; /* Updated */
+  font-weight: 700;
+  letter-spacing: 2px;
+  border: 2px solid #d4af37;
+  color: #d4af37;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+  background: #d4af37;
+  color: #000;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+}
+
+/* --- UPDATED FONTS FOR SECTIONS --- */
+.countdown-section {
+  padding: 80px 0;
+  background: #000;
+}
+
+.countdown-title {
+  font-family: 'Orbitron', sans-serif; /* Updated */
+  color: #d4af37;
+  font-weight: 700;
+  letter-spacing: 4px; /* Updated */
+  margin-bottom: 70px !important;
+}
+
+.events-section {
+  padding: 90px 0;
+  background: #000;
+}
+
+.events-title {
+  font-family: 'Orbitron', sans-serif; /* Updated */
+  color: #cda625;
+  font-weight: 700;
+  letter-spacing: 4px; /* Updated */
+}
+
+/* --- RESTORED ORIGINAL CARD SHAPES --- */
+.event-card {
+  background: #000;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  border-radius: 14px; /* Restored original shape */
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  box-shadow:
+    0 0 25px rgba(212, 175, 55, 0.35),
+    0 15px 35px rgba(0, 0, 0, 0.9);
+}
+
+.event-img {
+  height: 230px;
+  object-fit: cover;
+}
+
+.event-card .card-title {
+  font-family: 'Orbitron', sans-serif; /* Updated font inside original shape */
+  color: #d4af37;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.event-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+/* --- RESTORED ORIGINAL ANIMATIONS --- */
+.event-animate {
+  opacity: 0;
+  transform: translateY(80px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.event-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- UPDATED MOBILE RESPONSIVE FONTS --- */
+@media (max-width: 768px) {
+ .college-header {
+    gap: 8px;
+    padding: 0 5px; /* Slight breathing room from screen edges */
+  }
+
+  /* Ensure the container itself isn't shifted */
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .department-name {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+  .event-title {
+    font-size: 2.3rem;
+    letter-spacing: 3px;
+  }
+}
+
+@media (max-width: 380px) {
+  .college-name {
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+  }
+  .event-logo {
+    height: 30px;
+  }
+}
