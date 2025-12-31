@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./MemeMania.css";
+import "./memeMania.css";
 
 const MemeMania = () => {
   const [open, setOpen] = useState(null);

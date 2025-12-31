@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./PromptEngineering.css";
+import "./promptEngineering.css";
 
 const PromptEngineering = () => {
   const [open, setOpen] = useState(null);
