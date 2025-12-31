@@ -7,6 +7,7 @@
   opacity: 0;
   transform: translateY(40px);
   transition: all 0.8s ease;
+  overflow-x: hidden; /* prevents second scrollbar */
 }
 
 .countdown-wrapper.show {
@@ -14,19 +15,23 @@
   transform: translateY(0);
 }
 
-/* Container */
+/* Container – FORCE SINGLE LINE */
 .countdown-container {
   display: flex;
-  gap: 20px;
-  flex-wrap: wrap;              /* 🔥 IMPORTANT for mobile */
+  flex-wrap: nowrap;          /* 🔥 NO WRAP */
+  gap: clamp(10px, 2vw, 20px);
   justify-content: center;
-  padding: 20px;
+  align-items: center;
+  max-width: 100%;
+  padding: 10px;
+  overflow: hidden;
 }
 
 /* Time box */
 .time-box {
-  min-width: 90px;
-  padding: 18px 14px;
+  flex: 0 0 auto;             /* 🔥 prevents shrinking weirdly */
+  width: clamp(70px, 18vw, 110px);
+  padding: clamp(10px, 2vw, 18px);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
@@ -41,15 +46,15 @@
 
 /* Number */
 .time-box h2 {
-  font-size: clamp(22px, 5vw, 36px);   /* 🔥 Responsive */
   font-family: "Orbitron", sans-serif;
+  font-size: clamp(18px, 5vw, 36px);
   color: #00c8ff;
-  margin-bottom: 6px;
+  margin-bottom: 4px;
 }
 
 /* Label */
 .time-box span {
-  font-size: clamp(10px, 3vw, 14px);
+  font-size: clamp(9px, 2.5vw, 14px);
   color: #d4af37;
   letter-spacing: 1px;
 }
@@ -72,23 +77,4 @@
   font-size: 14px;
   color: #d4af37;
   margin-top: 10px;
-}
-
-/* 📱 iPhone / Small devices */
-@media (max-width: 480px) {
-  .countdown-container {
-    gap: 14px;
-  }
-
-  .time-box {
-    min-width: 70px;
-    padding: 14px 10px;
-  }
-}
-
-/* 📱 Tablets */
-@media (max-width: 768px) {
-  .countdown-wrapper {
-    margin: 40px 0;
-  }
 }
