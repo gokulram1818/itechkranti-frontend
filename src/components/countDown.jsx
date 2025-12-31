@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import "./Countdown.css";
+import "./CountDown.css";
 
 const Countdown = ({ eventDate }) => {
   const countdownRef = useRef(null);
