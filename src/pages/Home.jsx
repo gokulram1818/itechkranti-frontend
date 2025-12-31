@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import "./Home.css";
-import Countdown from "../components/CountDown";
+import Countdown from "../components/CountDown.jsx";
 
 const Home = () => {
 
