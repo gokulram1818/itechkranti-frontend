@@ -30,7 +30,7 @@ const Home = () => {
     <>
     
       <section className="home">
-        <video autoPlay muted loop id="home-video">
+        <video autoPlay muted playsInline preload="auto" loop id="home-video">
           <source src="/bg.mp4" type="video/mp4" />
         </video>
 
