@@ -8,7 +8,7 @@ const events = [
     description: "A teamwork-based coding challenge testing speed and logic.",
     icon: "/events/code-relay-logo.png",
     date: "06/01/2026",
-    time: "10:15 AM - 11:15 AM",
+    time: "10:15 AM - 11.15 AM",
     venue: "E-block (E-211)",
   },
   {
@@ -27,13 +27,13 @@ const events = [
     icon: "/events/prompt-logo.png",
     date: "06/01/2026",
     time: "11:45 AM - 12:45 PM",
-    venue: "E-block (E-211)",
+    venue: "E-block(E-211)",
   },
   {
     slug: "memeMania",
     name: "MEME MANIA",
     description: "Unleash your wit and humor in the ultimate meme-making showdown.",
-    icon: "/events/meme-logo.png",
+    icon: "https://cdn-icons-png.flaticon.com/512/4727/4727496.png",
     date: "06/01/2026",
     time: "11:45 AM - 12:45 PM",
     venue: "E-block (E-107)",
@@ -41,7 +41,7 @@ const events = [
   {
     slug: "mindScape",
     name: "MINDSCAPE",
-    description: "Challenge your perception and problem-solving skills.",
+    description: "Challenge your perception and problem-solving skills through technical puzzles.",
     icon: "/events/mindscape-logo.png",
     date: "06/01/2026",
     time: "10:15 AM - 11:15 AM",
@@ -50,7 +50,7 @@ const events = [
   {
     slug: "techSpirit",
     name: "TECH SPIRIT",
-    description: "A high-speed mental and technical battleground.",
+    description: "A high-speed mental and technical battleground testing logic and coding efficiency.",
     icon: "/events/tech-spirit-logo.png",
     date: "06/01/2026",
     time: "10:15 AM - 1:15 PM",
@@ -62,26 +62,32 @@ const rules = [
   "Participants must carry a college ID card.",
   "Each team must consist of 2 members.",
   "Each event will consist of two rounds.",
-  "Online registration is mandatory.",
+  "Online registration is mandatory for all events.",
   "Late entries will not be entertained.",
-  "Judge's decision will be final.",
+  "Judge's decisions will be final.",
+  "Students from any computer science department can participate.",
+  "Top 5 teams will be selected for final round.",
 ];
 
 const Events = () => {
   return (
-    <div className="events-page">
-      <div className="bg g1" />
-      <div className="bg g2" />
+     <div className="events-page">
+      <div className="bg g1"></div>
+      <div className="bg g2"></div>
 
       <section className="title">
         <h2>Events</h2>
-        <span />
+        <span></span>
       </section>
 
-      <section className="events">
+    
+      <section className="events container">
         <div className="row g-4">
-          {events.map(event => (
-            <div key={event.slug} className="col-12 col-sm-6 col-lg-4">
+          {events.map((event) => (
+            <div
+              key={event.slug}
+              className="col-12 col-sm-6 col-lg-4"
+            >
               <Link to={`/events/${event.slug}`} className="event-link">
                 <div className="flip-card">
                   <div className="flip-inner">
@@ -105,11 +111,12 @@ const Events = () => {
         </div>
       </section>
 
+      
       <section className="rules-wrapper">
         <div className="rules-title">General Rules</div>
         <div className="rules-grid">
-          {rules.map((rule, i) => (
-            <div className="rule-card" key={i}>
+          {rules.map((rule, index) => (
+            <div className="rule-card" key={index}>
               <div className="check">✓</div>
               <p>{rule}</p>
             </div>
