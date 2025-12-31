@@ -89,7 +89,7 @@ const Home = () => {
 
           <div className="row g-4">
             {[
-              { name: "Cipher Chase", path: "chipperChase",image: "/events/chipper-chase.jpeg" },
+              { name: "Cipher Chase", path: "cipherChase",image: "/events/chipper-chase.jpeg" },
               { name: "Code Relay", path: "codeRelay", image: "/events/code-relay.png" },
               { name: "Prompt Masters", path: "promptEngineering", image: "/events/prompt_engineering.png" },
               { name: "Meme Mania", path: "memeMania", image: "/events/meme-mania.jpeg" },
