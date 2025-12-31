@@ -1,13 +1,10 @@
-/* Wrapper */
+/* Wrapper animation */
 .countdown-wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 60px 0;
   opacity: 0;
-  transform: translateY(40px);
-  transition: all 0.8s ease;
-  overflow-x: hidden; /* prevents second scrollbar */
+  transform: translateY(80px); 
+  transition: 
+    opacity 0.8s ease,
+    transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .countdown-wrapper.show {
@@ -15,66 +12,75 @@
   transform: translateY(0);
 }
 
-/* Container – FORCE SINGLE LINE */
+
 .countdown-container {
   display: flex;
-  flex-wrap: nowrap;          /* 🔥 NO WRAP */
-  gap: clamp(10px, 2vw, 20px);
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: nowrap;
+}
+
+
+
+.time-box {
+  width: 120px;
+  height: 120px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 1.5px solid #d4af37;
+  border-radius: 14px;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 100%;
-  padding: 10px;
-  overflow: hidden;
+
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
 }
 
-/* Time box */
-.time-box {
-  flex: 0 0 auto;             /* 🔥 prevents shrinking weirdly */
-  width: clamp(70px, 18vw, 110px);
-  padding: clamp(10px, 2vw, 18px);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 0 20px rgba(212, 175, 55, 0.25);
-  text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.time-box:hover {
-  transform: translateY(-6px);
-}
-
-/* Number */
 .time-box h2 {
-  font-family: "Orbitron", sans-serif;
-  font-size: clamp(18px, 5vw, 36px);
-  color: #00c8ff;
-  margin-bottom: 4px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
 }
 
-/* Label */
 .time-box span {
-  font-size: clamp(9px, 2.5vw, 14px);
   color: #d4af37;
+  font-size: 0.9rem;
   letter-spacing: 1px;
+  margin-top: 6px;
 }
 
-/* Registration closed */
+/* Registration closed message */
 .registration-closed {
   text-align: center;
-  padding: 30px 20px;
-  border-radius: 20px;
-  background: rgba(255, 0, 0, 0.08);
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.3);
+  padding: 40px 20px;
 }
 
 .registration-closed h2 {
-  font-size: clamp(20px, 5vw, 28px);
-  color: #ff4d4d;
+  color: #d4af37;
+  font-weight: 700;
+  letter-spacing: 2px;
 }
 
 .registration-closed p {
-  font-size: 14px;
-  color: #d4af37;
+  color: #ffffff;
+  opacity: 0.8;
   margin-top: 10px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .time-box {
+    min-width: 85px;
+    height: 85px;
+  }
+  .countdown-container {
+    overflow-x: auto;     
+    padding-bottom: 10px;
+  }
+
+  .time-box h2 {
+    font-size: 2rem;
+  }
 }
