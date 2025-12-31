@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./mindscape.css";
+import "./mindScape.css";
 
 const Mindscape = () => {
   const [open, setOpen] = useState(null);
