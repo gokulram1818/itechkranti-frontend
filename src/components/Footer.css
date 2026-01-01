@@ -3,7 +3,6 @@
   padding: 70px 0 30px;
   color: #fff;
 
-  /* Animation initial state */
   opacity: 0;
   transform: translateY(80px);
   transition:
@@ -11,13 +10,11 @@
     transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-/* When visible */
 .footer.footer-show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Titles */
 .footer-title {
   color: #d4af37;
   font-weight: 700;
@@ -31,13 +28,11 @@
   margin-bottom: 8px;
 }
 
-/* Text */
 .footer-text {
   opacity: 0.8;
   margin-bottom: 20px;
 }
 
-/* Instagram + Email */
 .footer-contact {
   display: flex;
   flex-direction: column;
@@ -87,7 +82,6 @@
   }
 }
 
-/* Mobile */
 @media (max-width: 768px) {
   .footer {
     text-align: center;

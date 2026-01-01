@@ -11,7 +11,7 @@ const ChipperChase = () => {
 
   return (
     <section className="event-details">
-      {/* Header */}
+      
       <div className="event-header">
         <h1>Cipher Chase</h1>
         <p>Rearrange code snippets to form a working program.</p>

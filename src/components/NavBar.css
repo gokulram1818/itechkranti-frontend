@@ -16,14 +16,12 @@
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
 }
 
-/* LOGO */
 .nav-logo {
   color: #d4af37;
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-/* DESKTOP LINKS */
 .nav-links {
   display: flex;
 }
@@ -39,7 +37,6 @@
   color: #d4af37;
 }
 
-/* HAMBURGER */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -54,7 +51,6 @@
   transition: 0.3s;
 }
 
-/* Animate hamburger */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -67,7 +63,6 @@
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* MOBILE MENU */
 .mobile-menu {
   position: absolute;
   top: 100%;
@@ -95,7 +90,6 @@
   display: flex;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .nav-links {
     display: none;

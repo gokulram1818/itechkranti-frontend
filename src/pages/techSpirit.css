@@ -67,7 +67,6 @@
 .accordion-content {
     max-height: 0;
     overflow: hidden;
-    /* Slow transition for premium feel */
     transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease;
     opacity: 0;
 }
@@ -91,7 +90,7 @@
 }
 
 .accordion-content li::before {
-    content: "🧠"; /* Tech Spirit Emoji */
+    content: "🧠"; 
     position: absolute;
     left: -25px;
     font-size: 0.85rem;

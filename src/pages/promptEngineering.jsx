@@ -71,7 +71,6 @@ const PromptEngineering = () => {
         ))}
       </div>
 
-      {/* Luxury Info Grid from documentation */}
       <div className="event-info-grid">
         <div className="info-card">
           <span>Date</span>

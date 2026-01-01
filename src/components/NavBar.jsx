@@ -25,7 +25,6 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isHome]);
 
-  // Close menu on route change
   useEffect(() => {
     setMenuOpen(false);
   }, [location.pathname]);
@@ -34,14 +33,12 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? "navbar-black" : ""}`}>
       <div className="nav-logo">iTechKranti</div>
 
-      {/* DESKTOP LINKS */}
       <div className="nav-links">
         <NavLink to="/">Home</NavLink>
         <NavLink to="/events">Events</NavLink>
         <NavLink to="/register">Register</NavLink>
       </div>
 
-      {/* HAMBURGER */}
       <div
         className={`hamburger ${menuOpen ? "active" : ""}`}
         onClick={() => setMenuOpen(!menuOpen)}
@@ -51,7 +48,6 @@ const Navbar = () => {
         <span></span>
       </div>
 
-      {/* MOBILE MENU */}
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
         <NavLink to="/">Home</NavLink>
         <NavLink to="/events">Events</NavLink>

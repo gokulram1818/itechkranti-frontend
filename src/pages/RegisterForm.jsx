@@ -14,8 +14,8 @@ const RegisterForm = () => {
     events: {
       cipherChase: false, 
       codeRelay: false,
-      promptMasters: false, // Kept as requested
-      memeMania: false,         // Data Dash and Prompt Masters removed
+      promptMasters: false, 
+      memeMania: false,         
       mindscape: false,  
       techSpirit: false,
     },
@@ -24,24 +24,24 @@ const RegisterForm = () => {
  const handleChange = (e) => {
   const { name, value, checked, type } = e.target;
 
-  // Handle Event Checkboxes (Nested Object)
+
   if (name in formData.events) {
     setFormData(prev => ({
       ...prev,
       events: {
         ...prev.events,
-        [name]: checked // This updates the specific boolean (true/false)
+        [name]: checked 
       }
     }));
   } 
-  // Handle Stream Selection
+  
   else if (name === "stream") {
     setFormData(prev => ({
       ...prev,
       stream: value
     }));
   } 
-  // Handle All Other Text/Tel Inputs
+  
   else {
     const finalValue = type === "text" ? value.toUpperCase() : value;
     setFormData(prev => ({

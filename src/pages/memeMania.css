@@ -65,7 +65,6 @@
     border-color: #d4af37;
 }
 
-/* Smooth slow transition */
 .accordion-content {
     max-height: 0;
     overflow: hidden;

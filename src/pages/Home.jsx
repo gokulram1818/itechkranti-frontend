@@ -5,7 +5,6 @@ import Countdown from "../components/countDown.jsx";
 
 const Home = () => {
 
-  // Scroll animation for event cards
   useEffect(() => {
     const cards = document.querySelectorAll(".event-animate");
 
@@ -70,7 +69,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* COUNTDOWN SECTION */}
+      
       <section className="countdown-section">
         <div className="container text-center">
           <h2 className="countdown-title mb-5 fs-1">

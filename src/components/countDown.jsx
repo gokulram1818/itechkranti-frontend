@@ -20,7 +20,6 @@ const Countdown = ({ eventDate }) => {
 
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
 
-  // Update countdown every second
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
@@ -29,7 +28,6 @@ const Countdown = ({ eventDate }) => {
     return () => clearInterval(timer);
   }, [eventDate]);
 
-  // Scroll animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
