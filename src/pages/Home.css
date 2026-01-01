@@ -197,6 +197,36 @@
     letter-spacing: 3px;
   }
 }
+/* Small devices – LANDSCAPE FIX ONLY */
+@media (max-height: 500px) {
+  .college-header {
+    margin-top: 8px;
+  }
+
+  .department-name {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .organizes-text {
+    margin-bottom: 6px;
+    letter-spacing: 4px;
+  }
+
+  .event-title {
+    margin-top: 6px;
+    margin-bottom: 8px;
+    letter-spacing: 5px;
+  }
+
+  .event-subtitle {
+    margin-bottom: 10px;
+  }
+
+  .register-btn {
+    margin-top: 6px;
+  }
+}
 
 
 @media (max-width: 380px) {
