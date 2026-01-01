@@ -1,10 +1,11 @@
 /* Wrapper animation */
 .countdown-wrapper {
   opacity: 0;
-  transform: translateY(80px); 
-  transition: 
+  transform: translateY(80px);
+  transition:
     opacity 0.8s ease,
     transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+  overflow-x: hidden; /* 🔥 prevents second scrollbar */
 }
 
 .countdown-wrapper.show {
@@ -12,19 +13,25 @@
   transform: translateY(0);
 }
 
-
+/* Container – FORCE SINGLE LINE */
 .countdown-container {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  flex-wrap: nowrap;
+  align-items: center;
+  gap: clamp(10px, 2vw, 16px);
+  flex-wrap: nowrap;          /* 🔥 never wrap */
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;           /* 🔥 no scroll */
+  padding: 0 10px;
 }
 
-
-
+/* Time box – RESPONSIVE SIZE */
 .time-box {
-  width: 120px;
-  height: 120px;
+  flex: 0 0 auto;
+  width: clamp(70px, 18vw, 120px);
+  height: clamp(70px, 18vw, 120px);
+
   background: rgba(0, 0, 0, 0.7);
   border: 1.5px solid #d4af37;
   border-radius: 14px;
@@ -37,16 +44,18 @@
   box-shadow: 0 0 15px rgba(212, 175, 55, 0.25);
 }
 
+/* Numbers */
 .time-box h2 {
-  font-size: 2.8rem;
+  font-size: clamp(1.6rem, 5vw, 2.8rem);
   font-weight: 700;
   color: #ffffff;
   margin: 0;
 }
 
+/* Labels */
 .time-box span {
   color: #d4af37;
-  font-size: 0.9rem;
+  font-size: clamp(0.6rem, 2.5vw, 0.9rem);
   letter-spacing: 1px;
   margin-top: 6px;
 }
@@ -67,20 +76,4 @@
   color: #ffffff;
   opacity: 0.8;
   margin-top: 10px;
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-  .time-box {
-    min-width: 85px;
-    height: 85px;
-  }
-  .countdown-container {
-    overflow-x: auto;     
-    padding-bottom: 10px;
-  }
-
-  .time-box h2 {
-    font-size: 2rem;
-  }
 }
