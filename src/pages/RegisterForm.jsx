@@ -21,36 +21,35 @@ const RegisterForm = () => {
     },
   });
 
- const handleChange = (e) => {
-  const { name, value, checked, type } = e.target;
+  // ✅ ADDED
+  const [loading, setLoading] = useState(false);
 
+  const handleChange = (e) => {
+    const { name, value, checked, type } = e.target;
 
-  if (name in formData.events) {
-    setFormData(prev => ({
-      ...prev,
-      events: {
-        ...prev.events,
-        [name]: checked 
-      }
-    }));
-  } 
-  
-  else if (name === "stream") {
-    setFormData(prev => ({
-      ...prev,
-      stream: value
-    }));
-  } 
-  
-  else {
-    const finalValue = type === "text" ? value.toUpperCase() : value;
-    setFormData(prev => ({
-      ...prev,
-      [name]: finalValue
-    }));
-  }
-};
-
+    if (name in formData.events) {
+      setFormData(prev => ({
+        ...prev,
+        events: {
+          ...prev.events,
+          [name]: checked
+        }
+      }));
+    } 
+    else if (name === "stream") {
+      setFormData(prev => ({
+        ...prev,
+        stream: value
+      }));
+    } 
+    else {
+      const finalValue = type === "text" ? value.toUpperCase() : value;
+      setFormData(prev => ({
+        ...prev,
+        [name]: finalValue
+      }));
+    }
+  };
 
   const validateForm = () => {
     const nameRegex = /^[A-Z\s.]+$/;
@@ -81,7 +80,7 @@ const RegisterForm = () => {
       alert("Please select your stream (Aided or Self Financed).");
       return false;
     }
-    
+
     const isEventSelected = Object.values(formData.events).some(val => val === true);
     if (!isEventSelected) {
       alert("Please select at least one event.");
@@ -96,6 +95,9 @@ const RegisterForm = () => {
 
     if (!validateForm()) return;
 
+    // ✅ ADDED
+    setLoading(true);
+
     try {
       const res = await fetch("https://itechkranti-backend.onrender.com/api/register", {
         method: "POST",
@@ -104,14 +106,16 @@ const RegisterForm = () => {
       });
 
       const data = await res.json();
+
       if (!res.ok) {
         alert(data.message || "Something went wrong");
+        setLoading(false);
         return;
       }
 
       alert("Registration Successful!");
-      console.log("Data being sent:", formData);
-      
+      setLoading(false);
+
       setFormData({
         participant1Name: "",
         participant1Roll: "",
@@ -129,8 +133,10 @@ const RegisterForm = () => {
           techSpirit: false
         },
       });
+
     } catch (error) {
       alert("Server error. Please try again later.");
+      setLoading(false);
     }
   };
 
@@ -203,8 +209,23 @@ const RegisterForm = () => {
           </div>
 
           <div className="form-actions">
-            <a href=" https://chat.whatsapp.com/HkX4PKG7oEdJgF2J2IEe1z" target="_blank" rel="noopener noreferrer" className="luxury-btn wa-btn">JOIN WHATSAPP GROUP</a>
-            <button type="submit" className="luxury-btn main-btn">CONFIRM REGISTRATION</button>
+            <a
+              href="https://chat.whatsapp.com/HkX4PKG7oEdJgF2J2IEe1z"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="luxury-btn wa-btn"
+            >
+              JOIN WHATSAPP GROUP
+            </a>
+
+            {/* ✅ UPDATED BUTTON */}
+            <button
+              type="submit"
+              className="luxury-btn main-btn"
+              disabled={loading}
+            >
+              {loading ? "REGISTERING..." : "CONFIRM REGISTRATION"}
+            </button>
           </div>
         </form>
       </div>
