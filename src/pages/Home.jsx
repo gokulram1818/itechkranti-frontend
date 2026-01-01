@@ -60,7 +60,7 @@ const Home = () => {
             </p>
 
             <Link
-              to="/register"
+              to="/events"
               className="btn register-btn px-5 py-2 rounded-pill mt-3"
             >
               Register
