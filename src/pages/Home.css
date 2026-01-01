@@ -2,7 +2,8 @@
 
 .home {
   position: relative;
-  height: 100vh;
+  min-height: 100svh;   
+  min-height: 100vh;    
   overflow: hidden;
 }
 
@@ -194,6 +195,12 @@
   .event-title {
     font-size: 2.3rem;
     letter-spacing: 3px;
+  }
+}
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-overlay {
+    padding-top: 40px;
+    padding-bottom: 40px;
   }
 }
 
