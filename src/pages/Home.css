@@ -2,9 +2,11 @@
 
 .home {
   position: relative;
-  height: 100vh;
+  min-height: 100svh;
+  height: auto;
   overflow: hidden;
 }
+
 
 /* FIXED VIDEO */
 #home-video {
@@ -203,6 +205,16 @@
     letter-spacing: 3px;
   }
 }
+@media (max-height: 500px) and (orientation: landscape) {
+  .home-overlay {
+    padding: 10px 0;
+  }
+
+  .home .container {
+    transform: scale(0.9); 
+  }
+}
+
 
 @media (max-width: 380px) {
   .college-name {
