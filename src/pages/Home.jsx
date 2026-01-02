@@ -75,7 +75,7 @@ const Home = () => {
           <h2 className="countdown-title mb-5 fs-1">
             Event Starts In
           </h2>
-          <Countdown eventDate="2026-01-06T10:00:00" />
+          <Countdown eventDate="2026-01-02T10:00:00" />
         </div>
       </section>
 
