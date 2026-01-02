@@ -59,7 +59,7 @@ const Countdown = ({ eventDate }) => {
         </div>
       ) : (
         <div className="registration-closed">
-          <h2>Registration Closed</h2>
+          <h2>Register Soon</h2>
           <p>The event has already started.</p>
         </div>
       )}
