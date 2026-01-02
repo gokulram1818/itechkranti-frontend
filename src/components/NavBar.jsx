@@ -31,7 +31,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? "navbar-black" : ""}`}>
-      <div className="nav-logo">iTechKranti</div>
+      <div className="nav-logo">iTechKranti '26</div>
 
       <div className="nav-links">
         <NavLink to="/">Home</NavLink>

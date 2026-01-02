@@ -79,7 +79,7 @@ const TechSpirit = () => {
         </div>
         <div className="info-card">
           <span>Time</span>
-          <p>10:15 AM - 1:15 PM</p>
+          <p>10:15 AM - 11:15 AM</p>
         </div>
         <div className="info-card">
           <span>Venue</span>
