@@ -63,9 +63,9 @@ const rules = [
   "Each team must consist of 2 members.",
   "Each event will consist of two rounds.",
   "Online registration is mandatory for all events.",
-  "Late entries will not be entertained.",
+  "Late entries will not be entered.",
   "Judge's decisions will be final.",
-  "Students from any computer science department can participate.",
+  "Students from any department can participate.",
   "Top 5 teams will be selected for final round.",
 ];
 
