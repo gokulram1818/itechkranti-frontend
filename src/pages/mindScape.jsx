@@ -24,7 +24,7 @@ const Mindscape = () => {
       title: "Round 1: Spot the Tech",
       items: [
         "Time Duration: 20 minutes.",
-        "Participants will be provided with 'Who Am I?' and image-based questions.",
+        "Participants will be provided with 'Guess What?' and image-based questions.",
         "Answers must be written within the given time.",
         "Top 5 teams will be selected for the next round."
       ],
@@ -81,7 +81,7 @@ const Mindscape = () => {
         </div>
         <div className="info-card">
           <span>Venue</span>
-          <p>E-block (E-106)</p>
+          <p>E-block (E-108)</p>
         </div>
       </div>
 
