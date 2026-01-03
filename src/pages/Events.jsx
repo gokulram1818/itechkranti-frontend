@@ -45,7 +45,7 @@ const events = [
     icon: "/events/mindscape-logo.png",
     date: "06/01/2026",
     time: "10:15 AM - 11:15 AM",
-    venue: "E-block (E-106)",
+    venue: "E-block (E-108)",
   },
   {
     slug: "techSpirit",
@@ -53,7 +53,7 @@ const events = [
     description: "A high-speed mental and technical battleground testing logic and coding efficiency.",
     icon: "/events/tech-spirit-logo.png",
     date: "06/01/2026",
-    time: "10:15 AM - 1:15 PM",
+    time: "10:15 AM - 11:15 AM",
     venue: "E-block (E-107)",
   },
 ];
