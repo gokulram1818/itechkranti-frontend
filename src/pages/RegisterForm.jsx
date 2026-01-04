@@ -4,24 +4,26 @@ import './RegisterForm.css';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
-    participant1Name: '',
-    participant1Roll: '',
-    participant2Name: '',
-    participant2Roll: '',
-    stream: '',
-    department: '',
-    phone: '',
-    events: {
-      cipherChase: false, 
-      codeRelay: false,
-      promptMasters: false, 
-      memeMania: false,         
-      mindscape: false,  
-      techSpirit: false,
-    },
-  });
+  participant1Name: '',
+  participant1Roll: '',
+  participant2Name: '',
+  participant2Roll: '',
+  stream: '',
+  department: '',
+  phone: '',        
+  phone2: '',       
+  events: {
+    cipherChase: false, 
+    codeRelay: false,
+    promptMasters: false, 
+    memeMania: false,         
+    mindscape: false,  
+    techSpirit: false,
+  },
+});
 
-  // ✅ ADDED
+
+  
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -76,6 +78,11 @@ const RegisterForm = () => {
       alert("Phone Number must be exactly 10 digits.");
       return false;
     }
+    if (!phoneRegex.test(formData.phone2)) {
+  alert("WhatsApp Phone Number 2 must be exactly 10 digits.");
+  return false;
+}
+
     if (!formData.stream) {
       alert("Please select your stream (Aided or Self Financed).");
       return false;
@@ -95,7 +102,6 @@ const RegisterForm = () => {
 
     if (!validateForm()) return;
 
-    // ✅ ADDED
     setLoading(true);
 
     try {
@@ -117,22 +123,23 @@ const RegisterForm = () => {
       setLoading(false);
 
       setFormData({
-        participant1Name: "",
-        participant1Roll: "",
-        participant2Name: "",
-        participant2Roll: "",
-        stream: "",
-        department: "",
-        phone: "",
-        events: {
-          codeRelay: false,
-          cipherChase: false,
-          promptMasters: false,
-          memeMania: false,
-          mindscape: false,
-          techSpirit: false
-        },
-      });
+  participant1Name: "",
+  participant1Roll: "",
+  participant2Name: "",
+  participant2Roll: "",
+  stream: "",
+  department: "",
+  phone: "",
+  phone2: "",   
+  events: {
+    codeRelay: false,
+    cipherChase: false,
+    promptMasters: false,
+    memeMania: false,
+    mindscape: false,
+    techSpirit: false
+  },
+});
 
     } catch (error) {
       alert("Server error. Please try again later.");
@@ -187,9 +194,29 @@ const RegisterForm = () => {
           </div>
 
           <div className="input-group">
-            <label>WhatsApp Phone Number</label>
-            <input type="tel" name="phone" value={formData.phone} onChange={handleChange} placeholder="10 DIGIT NUMBER" required />
-          </div>
+  <label>WhatsApp Phone Number 1</label>
+  <input
+    type="tel"
+    name="phone"
+    value={formData.phone}
+    onChange={handleChange}
+    placeholder="10 DIGIT NUMBER"
+    required
+  />
+</div>
+
+<div className="input-group">
+  <label>WhatsApp Phone Number 2</label>
+  <input
+    type="tel"
+    name="phone2"
+    value={formData.phone2}
+    onChange={handleChange}
+    placeholder="10 DIGIT NUMBER"
+    required
+  />
+</div>
+
 
           <div className="event-selection">
             <label className="section-label">Select Your Events</label>
